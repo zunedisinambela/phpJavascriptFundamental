@@ -312,55 +312,111 @@ var arr3 = arr2.slice(1,4); //! Menghapus elemen
 
 
 //TODO: Juragan Angkot Pengelolaan Penumpang
-var penumpang = [];
-var tambahPenumpang = function (namaPenumpang, penumpang) {
-    //? jika penumpang angkot kosong
-    if ( penumpang.length == 0) {
-        //? tambah penumpang di awal array
-        penumpang.push(namaPenumpang);
-        //? kembalikan isi array & keluar dari function
-        return penumpang;
-    } else {
-        //? telusuri seluruh kursi dari awal
-        for( var i = 0; i < penumpang.length; i++) {
-            //? jika ada kursi kosong
-            if ( penumpang[i] == undefined) {
-                //? tambah penumpang di kursi tersebut
-                penumpang[i] = namaPenumpang;
-                //? kembalikan isi array & keluar dari function
-                return penumpang;
-            }
-            //? jika sudah ada nama yang sama
-            else if( penumpang[i] == namaPenumpang) {
-                //? tampilkan pesan kesalahannya
-                console.log(`${ namaPenumpang } sudah ada di dalam angkot.`);
-                //? kembalikan isi array & keluar dari function
-                return penumpang;
-            }
-            //? jika seluruh kursi terisi
-            else if( i == penumpang.length - 1) {
-                //? tambah penumpang di akhir array
-                penumpang.push(namaPenumpang);
-                //? kembalikan isi array & keluar dari function
-                return penumpang;
-            }
-        }
-    }
+// var penumpang = [];
+// var tambahPenumpang = function (namaPenumpang, penumpang) {
+//     //? jika penumpang angkot kosong
+//     if ( penumpang.length == 0) {
+//         //? tambah penumpang di awal array
+//         penumpang.push(namaPenumpang);
+//         //? kembalikan isi array & keluar dari function
+//         return penumpang;
+//     } else {
+//         //? telusuri seluruh kursi dari awal
+//         for( var i = 0; i < penumpang.length; i++) {
+//             //? jika ada kursi kosong
+//             if ( penumpang[i] == undefined) {
+//                 //? tambah penumpang di kursi tersebut
+//                 penumpang[i] = namaPenumpang;
+//                 //? kembalikan isi array & keluar dari function
+//                 return penumpang;
+//             }
+//             //? jika sudah ada nama yang sama
+//             else if( penumpang[i] == namaPenumpang) {
+//                 //? tampilkan pesan kesalahannya
+//                 console.log(`${ namaPenumpang } sudah ada di dalam angkot.`);
+//                 //? kembalikan isi array & keluar dari function
+//                 return penumpang;
+//             }
+//             //? jika seluruh kursi terisi
+//             else if( i == penumpang.length - 1) {
+//                 //? tambah penumpang di akhir array
+//                 penumpang.push(namaPenumpang);
+//                 //? kembalikan isi array & keluar dari function
+//                 return penumpang;
+//             }
+//         }
+//     }
+// }
+
+// var hapusPenumpang = function (namaPenumpang, penumpang) {
+//     if ( penumpang.length == 0) {
+//         console.log(`Angkot masih kosong`);
+//         return penumpang;
+//     } else {
+//         for( var i = 0; i < penumpang.length; i++){
+//             if ( penumpang[i] == namaPenumpang) {
+//                 penumpang[i] = undefined;
+//                 return penumpang;
+//             } else if( i == penumpang.length - 1) {
+//                 console.log(`${namaPenumpang} tidak ada di dalam angkot.`);
+//                 return penumpang;
+//             }
+//         }
+//     }
+// }
+
+
+
+//TODO: object literal
+// var mhs1 = {
+//     nama: 'Zunedi',
+//     nim: '2016420094',
+//     email: 'zuned@mail.com',
+//     jurusan: 'informatika'
+// }
+
+// var mhs2 = {
+//     nama: 'Sinambela',
+//     nim: '2016420088',
+//     email: 'sinambela@mail.com',
+//     jurusan: 'informatika'
+// }
+
+
+//TODO: function declaration
+// function buatObjectMahasiswa(nama, nim, email, jurusan) {
+//     var mhs = {};
+//     mhs.nama = nama;
+//     mhs.nim = nim;
+//     mhs.email = email;
+//     mhs.jurusan = jurusan;
+//     return mhs;
+// }
+// console.log(buatObjectMahasiswa('Zunedi', '2016420094', 'zunedi@mail.com', 'Teknik Informatika'));
+
+
+//TODO: constructor
+// function Mahasiswa(nama, nim, email, jurusan) {
+//     //? apabila menggunakan constructor sudah di buatkan oleh js var this = {}
+//     this.nama = nama;
+//     this.nim = nim;
+//     this.email = email;
+//     this.jurusan = jurusan;
+//     //? return this;
+// }
+// var mhs3 = new Mahasiswa('Erik', '09201920', 'erik@mail.com', 'Teknik Elektro');
+// console.log(mhs3);
+
+
+
+//TODO: latihan object membuat object angkot
+
+function Angkot(supir, trayek, penumpang, kas) {
+    this.sopir = sopir;
+    this.trayek = trayek;
+    this.penumpang = penumpang;
+    this.kas = kas;
 }
 
-var hapusPenumpang = function (namaPenumpang, penumpang) {
-    if ( penumpang.length == 0) {
-        console.log(`Angkot masih kosong`);
-        return penumpang;
-    } else {
-        for( var i = 0; i < penumpang.length; i++){
-            if ( penumpang[i] == namaPenumpang) {
-                penumpang[i] = undefined;
-                return penumpang;
-            } else if( i == penumpang.length - 1) {
-                console.log(`${namaPenumpang} tidak ada di dalam angkot.`);
-                return penumpang;
-            }
-        }
-    }
-}
+var angkot1 = new Angkot('Zunedi', ['Mojokerto', 'Surabaya'], [], 0);
+var angkot1 = new Angkot('Sinambela', ['Mojokerto', 'Malang'], [], 0);
